@@ -91,7 +91,7 @@ export default function Index() {
           <div className="grid grid-cols-3 gap-8">
             <StatCounter value={50} suffix="+" label="Tamamlanmış layihə" index={0} />
             <StatCounter value={30} suffix="+" label="Müştəri" index={1} />
-            <StatCounter value={10} suffix="+" label="Il təcrübə" index={2} />
+            <StatCounter value={10} suffix="+" label="İl təcrübə" index={2} />
           </div>
         </div>
       </section>
