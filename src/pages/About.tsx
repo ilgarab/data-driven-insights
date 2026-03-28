@@ -4,6 +4,7 @@ import SectionHeader from "@/components/SectionHeader";
 import CTABanner from "@/components/CTABanner";
 import { teamMembers, companyInfo } from "@/data/mockData";
 import partnersImg from "@/assets/partners.png";
+import sectionsImg from "@/assets/4-sections.png";
 
 const features = [
   { icon: Crosshair, title: "Biznesə uyğun həllər", desc: "Hər sektorun spesifik ehtiyacına uyğunlaşdırılmış analitik sistemlər" },
@@ -80,6 +81,23 @@ export default function About() {
                 <p className="text-sm text-muted-foreground">{m.role}</p>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Products Overview */}
+      <section className="section-padding-sm">
+        <div className="container">
+          <SectionHeader title="Məhsullarımız" subtitle="Analitik ekosistemimizin əsas komponentləri" />
+          <div className="mx-auto max-w-5xl">
+            <motion.img
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              src={sectionsImg}
+              alt="Metric məhsulları - BI, Alert, AI, Fraud"
+              className="w-full rounded-2xl"
+            />
           </div>
         </div>
       </section>
