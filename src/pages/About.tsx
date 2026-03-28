@@ -88,7 +88,7 @@ export default function About() {
       {/* Products Overview */}
       <section className="section-padding-sm">
         <div className="container">
-          <SectionHeader title="Məhsullarımız" subtitle="Analitik ekosistemimizin əsas komponentləri" />
+          <SectionHeader title="Xidmətlərimiz" subtitle="Analitik ekosistemimizin əsas komponentləri" />
           <div className="mx-auto max-w-5xl">
             <motion.img
               initial={{ opacity: 0, y: 20 }}
