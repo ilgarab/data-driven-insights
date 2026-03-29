@@ -26,12 +26,12 @@ export default function Index() {
           <img
             src={heroBg}
             alt=""
-            className="h-full w-full object-cover opacity-90 dark:opacity-80"
+            className="h-full w-full object-cover opacity-100 dark:opacity-80"
             width={1920}
             height={1080}
           />
           <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/20 to-background" />
-          <div className="absolute inset-0 bg-gradient-to-r from-background/40 via-transparent to-background/40" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background/40 via-transparent to-background/40 dark:block hidden" />
         </div>
         <div className="container relative z-10">
           <div className="mx-auto max-w-3xl text-center">
