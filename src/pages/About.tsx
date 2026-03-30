@@ -19,6 +19,7 @@ const teamImages: Record<string, string> = {
 
 export default function About() {
   const { t } = useTranslation();
+  const visibleTeamMembers = teamMembers.filter((member) => member.name !== "Yalçın Abdulhəmidov");
 
   const features = [
     { icon: Crosshair, title: t("about.features.solutions"), desc: t("about.features.solutionsDesc") },
@@ -85,7 +86,7 @@ export default function About() {
         <div className="container">
           <SectionHeader title={t("about.team")} subtitle={t("about.teamSubtitle")} />
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {teamMembers.map((m, i) => (
+            {visibleTeamMembers.map((m, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="glow-card p-6 text-center">
                 {m.image && teamImages[m.image] ? (
                   <div className="mx-auto mb-4 h-24 w-24 overflow-hidden rounded-full border-2 border-primary/20">
