@@ -5,17 +5,20 @@ import az from "./locales/az.json";
 import en from "./locales/en.json";
 import ru from "./locales/ru.json";
 
+const savedLng = localStorage.getItem("i18nextLng");
+
 i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
     resources: { az: { translation: az }, en: { translation: en }, ru: { translation: ru } },
     fallbackLng: "az",
-    lng: localStorage.getItem("i18nextLng") || "az",
+    lng: savedLng || "az",
     interpolation: { escapeValue: false },
     detection: {
-      order: ["localStorage", "navigator"],
+      order: ["localStorage"],
       caches: ["localStorage"],
+      lookupLocalStorage: "i18nextLng",
     },
   });
 
