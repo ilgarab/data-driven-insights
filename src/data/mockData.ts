@@ -103,9 +103,8 @@ export const teamMembers = [
   { name: "Sona Muradova", role: "Team Leader", initials: "SM", image: "sona" },
   { name: "Pərvin Həsənova", role: "Data Analyst", initials: "PH" },
   { name: "Aytac Nadirova", role: "Data Analyst", initials: "AN" },
-  { name: "Nigar Əlizadə", role: "Data Analyst", initials: "NƏ" },
   { name: "Vüsal Şirinov", role: "Finance Analyst", initials: "VŞ" },
-  { name: "Yalçın Abdulhəmidov", role: "ERP Consultant", initials: "YA" },
+  { name: "Yalçın Talıbov", role: "CTO", initials: "YT", image: "yalcin" },
 ];
 
 export const companyInfo = {
