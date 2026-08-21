@@ -8,14 +8,12 @@ import partnersImg from "@/assets/partners.png";
 import sectionsImg from "@/assets/4-sections.png";
 import rovshanImg from "@/assets/rovshan.jpg";
 import vusalImg from "@/assets/vusal.jpg";
-import sonaImg from "@/assets/sona.jpg";
 import yalcinAsset from "@/assets/yalcin.jpg.asset.json";
 import aboutHeroImg from "@/assets/about-hero.png";
 
 const teamImages: Record<string, string> = {
   rovshan: rovshanImg,
   vusal: vusalImg,
-  sona: sonaImg,
   yalcin: yalcinAsset.url,
 };
 
