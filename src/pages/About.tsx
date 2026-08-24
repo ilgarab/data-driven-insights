@@ -8,13 +8,13 @@ import partnersImg from "@/assets/partners.png";
 import sectionsImg from "@/assets/4-sections.png";
 import rovshanImg from "@/assets/rovshan.jpg";
 import vusalImg from "@/assets/vusal.jpg";
-import yalcinAsset from "@/assets/yalcin.jpg.asset.json";
+import yalcinImg from "@/assets/yalcin.jpg";
 import aboutHeroImg from "@/assets/about-hero.png";
 
 const teamImages: Record<string, string> = {
   rovshan: rovshanImg,
   vusal: vusalImg,
-  yalcin: yalcinAsset.url,
+  yalcin: yalcinImg,
 };
 
 export default function About() {
