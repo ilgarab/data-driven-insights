@@ -10,7 +10,7 @@ export default function Blog() {
     <div className="pt-16">
       <section className="hero-gradient section-padding">
         <div className="container">
-          <SectionHeader badge={t("blog.badge")} title={t("blog.pageTitle")} subtitle={t("blog.pageSubtitle")} />
+          <SectionHeader as="h1" badge={t("blog.badge")} title={t("blog.pageTitle")} subtitle={t("blog.pageSubtitle")} />
         </div>
       </section>
       <section className="section-padding">

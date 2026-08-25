@@ -6,15 +6,16 @@ import ru from "./locales/ru.json";
 
 const STORAGE_KEY = "i18nextLng";
 const supportedLanguages = ["az", "en", "ru"] as const;
+const isBrowser = typeof window !== "undefined";
 
 const normalizeLanguage = (value?: string | null) => {
   const baseLanguage = value?.split("-")[0]?.toLowerCase();
   return supportedLanguages.includes(baseLanguage as (typeof supportedLanguages)[number]) ? baseLanguage : "az";
 };
 
-const initialLanguage = normalizeLanguage(localStorage.getItem(STORAGE_KEY));
+const initialLanguage = isBrowser ? normalizeLanguage(localStorage.getItem(STORAGE_KEY)) : "az";
 
-if (!localStorage.getItem(STORAGE_KEY)) {
+if (isBrowser && !localStorage.getItem(STORAGE_KEY)) {
   localStorage.setItem(STORAGE_KEY, initialLanguage);
 }
 
@@ -29,12 +30,14 @@ i18n
     interpolation: { escapeValue: false },
   });
 
-document.documentElement.lang = initialLanguage;
+if (isBrowser) {
+  document.documentElement.lang = initialLanguage;
 
-i18n.on("languageChanged", (language) => {
-  const normalizedLanguage = normalizeLanguage(language);
-  localStorage.setItem(STORAGE_KEY, normalizedLanguage);
-  document.documentElement.lang = normalizedLanguage;
-});
+  i18n.on("languageChanged", (language) => {
+    const normalizedLanguage = normalizeLanguage(language);
+    localStorage.setItem(STORAGE_KEY, normalizedLanguage);
+    document.documentElement.lang = normalizedLanguage;
+  });
+}
 
 export default i18n;

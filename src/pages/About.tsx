@@ -32,7 +32,7 @@ export default function About() {
     <div className="pt-16">
       <section className="hero-gradient section-padding">
         <div className="container">
-          <SectionHeader badge={t("about.badge")} title={t("about.title")} subtitle={t("about.subtitle")} />
+          <SectionHeader as="h1" badge={t("about.badge")} title={t("about.title")} subtitle={t("about.subtitle")} />
         </div>
       </section>
 
