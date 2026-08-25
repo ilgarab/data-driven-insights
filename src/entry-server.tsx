@@ -14,5 +14,7 @@ export function render(url: string) {
   );
 }
 
+export { blogPosts };
+
 export const staticRoutes = ["/", "/services", "/about", "/blog", "/contact"];
 export const blogRoutes = blogPosts.map((post) => `/blog/${post.id}`);

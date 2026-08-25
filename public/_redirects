@@ -1,0 +1,10 @@
+# Canonical host: www -> apex (301)
+http://www.metric.az/*   https://metric.az/:splat   301!
+https://www.metric.az/*  https://metric.az/:splat   301!
+
+# Legacy blog path -> /blog (301)
+/blogs        /blog   301!
+/blogs/*      /blog   301!
+
+# Prerendered routes are served as static files; anything unknown is a real 404
+/*            /404.html   404

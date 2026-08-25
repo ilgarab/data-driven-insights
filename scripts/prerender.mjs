@@ -13,10 +13,7 @@ const ssrEntry = pathToFileURL(path.join(root, "dist-ssr", "entry-server.js")).h
 
 const SITE = "https://metric-insights-forge.lovable.app";
 
-const { render, staticRoutes, blogRoutes } = await import(ssrEntry);
-const { blogPosts } = await import(pathToFileURL(path.join(root, "dist-ssr", "entry-server.js")).href).then(
-  async (m) => m.blogPosts ? m : { blogPosts: [] },
-);
+const { render, staticRoutes, blogRoutes, blogPosts } = await import(ssrEntry);
 
 const meta = {
   "/": {
