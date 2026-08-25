@@ -28,7 +28,7 @@ export default function Contact() {
     <div className="pt-16">
       <section className="hero-gradient section-padding">
         <div className="container">
-          <SectionHeader badge={t("contact.badge")} title={t("contact.title")} subtitle={t("contact.subtitle")} />
+          <SectionHeader as="h1" badge={t("contact.badge")} title={t("contact.title")} subtitle={t("contact.subtitle")} />
         </div>
       </section>
 

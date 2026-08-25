@@ -20,6 +20,7 @@ export default function Services() {
         <div className="container">
           <SectionHeader
             badge={t("services.badge")}
+            as="h1"
             title={t("services.pageTitle")}
             subtitle={t("services.pageSubtitle")}
           />
