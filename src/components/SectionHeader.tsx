@@ -6,10 +6,12 @@ interface SectionHeaderProps {
   title: string;
   subtitle?: string;
   centered?: boolean;
+  as?: "h1" | "h2";
   children?: ReactNode;
 }
 
-export default function SectionHeader({ badge, title, subtitle, centered = true }: SectionHeaderProps) {
+export default function SectionHeader({ badge, title, subtitle, centered = true, as = "h2" }: SectionHeaderProps) {
+  const Heading = as;
   return (
     <motion.div
       initial={{ opacity: 0, y: 20, filter: "blur(4px)" }}
@@ -23,9 +25,9 @@ export default function SectionHeader({ badge, title, subtitle, centered = true 
           {badge}
         </span>
       )}
-      <h2 className="text-balance text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl" style={{ lineHeight: "1.1" }}>
+      <Heading className="text-balance text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl" style={{ lineHeight: "1.1" }}>
         {title}
-      </h2>
+      </Heading>
       {subtitle && (
         <p className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground md:text-lg" style={{ lineHeight: "1.7" }}>
           {subtitle}
