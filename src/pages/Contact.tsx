@@ -8,6 +8,8 @@ import SectionHeader from "@/components/SectionHeader";
 export default function Contact() {
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [waLink, setWaLink] = useState("");
+
   const { t } = useTranslation();
 
   const serviceOptions = [
@@ -34,10 +36,24 @@ export default function Contact() {
       `Xidmət: ${get("service")}`,
       `Mesaj: ${get("message")}`,
     ].join("\n");
-    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`, "_blank", "noopener,noreferrer");
+
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+
+    // Popup blokerlərinə qarşı: real link klikini simulyasiya edirik
+    const a = document.createElement("a");
+    a.href = url;
+    a.target = "_blank";
+    a.rel = "noopener noreferrer";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+
+    setWaLink(url);
     setLoading(false);
     setSubmitted(true);
   };
+
+
 
 
   return (
@@ -102,6 +118,16 @@ export default function Contact() {
                     </div>
                     <h3 className="text-xl font-bold">{t("contact.successTitle")}</h3>
                     <p className="mt-2 text-muted-foreground">{t("contact.successText")}</p>
+                    {waLink && (
+                      <a
+                        href={waLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-5 inline-flex items-center justify-center rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
+                      >
+                        WhatsApp-da aç
+                      </a>
+                    )}
                   </div>
                 </div>
               ) : (
