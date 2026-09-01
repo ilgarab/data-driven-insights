@@ -12,7 +12,8 @@ import CTABanner from "@/components/CTABanner";
 import { services, blogPosts } from "@/data/mockData";
 import heroBgDark from "@/assets/hero-bg-dark.jpg";
 import heroBgLight from "@/assets/hero-bg-light.jpg";
-import partnersImg from "@/assets/partners.png";
+import partnersLight from "@/assets/partners-light.png";
+import partnersDark from "@/assets/partners-dark.png";
 import { useTheme } from "@/hooks/useTheme";
 
 export default function Index() {
@@ -135,9 +136,14 @@ export default function Index() {
           />
           <div className="mx-auto max-w-4xl">
             <img
-              src={partnersImg}
+              src={partnersLight}
               alt={t("partners.alt")}
-              className="w-full rounded-2xl"
+              className="w-full rounded-2xl dark:hidden"
+            />
+            <img
+              src={partnersDark}
+              alt={t("partners.alt")}
+              className="hidden w-full rounded-2xl dark:block"
             />
           </div>
         </div>
