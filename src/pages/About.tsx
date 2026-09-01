@@ -4,7 +4,8 @@ import { useTranslation } from "react-i18next";
 import SectionHeader from "@/components/SectionHeader";
 import CTABanner from "@/components/CTABanner";
 import { teamMembers } from "@/data/mockData";
-import partnersImg from "@/assets/partners.png";
+import partnersLight from "@/assets/partners-light.png";
+import partnersDark from "@/assets/partners-dark.png";
 import sectionsImg from "@/assets/4-sections.png";
 import rovshanImg from "@/assets/rovshan.jpg";
 import vusalImg from "@/assets/vusal.jpg";
@@ -144,9 +145,14 @@ export default function About() {
           <SectionHeader title={t("about.partnersTitle")} />
           <div className="mx-auto max-w-4xl">
             <img
-              src={partnersImg}
+              src={partnersLight}
               alt={t("partners.alt")}
-              className="w-full rounded-2xl"
+              className="w-full rounded-2xl dark:hidden"
+            />
+            <img
+              src={partnersDark}
+              alt={t("partners.alt")}
+              className="hidden w-full rounded-2xl dark:block"
             />
           </div>
         </div>
