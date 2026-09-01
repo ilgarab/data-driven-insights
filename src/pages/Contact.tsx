@@ -18,11 +18,27 @@ export default function Contact() {
     t("contact.other"),
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const WHATSAPP_NUMBER = "994516524945";
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
-    setTimeout(() => { setLoading(false); setSubmitted(true); }, 1500);
+    const fd = new FormData(e.currentTarget);
+    const get = (k: string) => (fd.get(k) as string)?.trim() || "-";
+    const text = [
+      "Yeni müraciət - metric.az",
+      `Ad: ${get("name")}`,
+      `Şirkət: ${get("company")}`,
+      `E-poçt: ${get("email")}`,
+      `Telefon: ${get("phone")}`,
+      `Xidmət: ${get("service")}`,
+      `Mesaj: ${get("message")}`,
+    ].join("\n");
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`, "_blank", "noopener,noreferrer");
+    setLoading(false);
+    setSubmitted(true);
   };
+
 
   return (
     <div className="pt-16">
