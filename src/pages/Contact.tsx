@@ -34,10 +34,33 @@ export default function Contact() {
       `Xidmət: ${get("service")}`,
       `Mesaj: ${get("message")}`,
     ].join("\n");
-    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`, "_blank", "noopener,noreferrer");
+
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+
+    // Popup blokerlərinə qarşı: real link klikini simulyasiya edirik
+    const a = document.createElement("a");
+    a.href = url;
+    a.target = "_blank";
+    a.rel = "noopener noreferrer";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+
+    // Yeni tab açılmadısa (iframe / mobil bloklama), eyni pəncərədə açılsın
+    window.setTimeout(() => {
+      if (document.visibilityState === "visible" && !document.hidden) {
+        try {
+          window.top ? (window.top.location.href = url) : (window.location.href = url);
+        } catch {
+          window.location.href = url;
+        }
+      }
+    }, 800);
+
     setLoading(false);
     setSubmitted(true);
   };
+
 
 
   return (
