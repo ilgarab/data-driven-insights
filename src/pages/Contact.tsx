@@ -8,6 +8,8 @@ import SectionHeader from "@/components/SectionHeader";
 export default function Contact() {
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [waLink, setWaLink] = useState("");
+
   const { t } = useTranslation();
 
   const serviceOptions = [
