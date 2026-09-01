@@ -109,26 +109,26 @@ export default function Contact() {
                   <div className="grid gap-5 sm:grid-cols-2">
                     <div>
                       <label className="mb-1.5 block text-sm font-medium">{t("contact.name")} *</label>
-                      <input required className="w-full rounded-lg border border-input bg-background px-4 py-2.5 text-sm transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20" />
+                      <input name="name" required className="w-full rounded-lg border border-input bg-background px-4 py-2.5 text-sm transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20" />
                     </div>
                     <div>
                       <label className="mb-1.5 block text-sm font-medium">{t("contact.company")}</label>
-                      <input className="w-full rounded-lg border border-input bg-background px-4 py-2.5 text-sm transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20" />
+                      <input name="company" className="w-full rounded-lg border border-input bg-background px-4 py-2.5 text-sm transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20" />
                     </div>
                   </div>
                   <div className="grid gap-5 sm:grid-cols-2">
                     <div>
                       <label className="mb-1.5 block text-sm font-medium">{t("contact.email")} *</label>
-                      <input type="email" required className="w-full rounded-lg border border-input bg-background px-4 py-2.5 text-sm transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20" />
+                      <input name="email" type="email" required className="w-full rounded-lg border border-input bg-background px-4 py-2.5 text-sm transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20" />
                     </div>
                     <div>
                       <label className="mb-1.5 block text-sm font-medium">{t("contact.phone")}</label>
-                      <input type="tel" className="w-full rounded-lg border border-input bg-background px-4 py-2.5 text-sm transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20" />
+                      <input name="phone" type="tel" className="w-full rounded-lg border border-input bg-background px-4 py-2.5 text-sm transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20" />
                     </div>
                   </div>
                   <div>
                     <label className="mb-1.5 block text-sm font-medium">{t("contact.serviceQuestion")}</label>
-                    <select className="w-full rounded-lg border border-input bg-background px-4 py-2.5 text-sm transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20">
+                    <select name="service" className="w-full rounded-lg border border-input bg-background px-4 py-2.5 text-sm transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20">
                       <option value="">{t("contact.select")}</option>
                       {serviceOptions.map((s) => (
                         <option key={s} value={s}>{s}</option>
@@ -137,7 +137,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <label className="mb-1.5 block text-sm font-medium">{t("contact.message")} *</label>
-                    <textarea required rows={4} className="w-full rounded-lg border border-input bg-background px-4 py-2.5 text-sm transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 resize-none" />
+                    <textarea name="message" required rows={4} className="w-full rounded-lg border border-input bg-background px-4 py-2.5 text-sm transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 resize-none" />
                   </div>
                   <Button type="submit" size="lg" className="w-full active:scale-[0.97]" disabled={loading}>
                     {loading ? t("contact.sending") : t("contact.send")}
