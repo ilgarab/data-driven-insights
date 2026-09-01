@@ -46,20 +46,11 @@ export default function Contact() {
     a.click();
     document.body.removeChild(a);
 
-    // Yeni tab açılmadısa (iframe / mobil bloklama), eyni pəncərədə açılsın
-    window.setTimeout(() => {
-      if (document.visibilityState === "visible" && !document.hidden) {
-        try {
-          window.top ? (window.top.location.href = url) : (window.location.href = url);
-        } catch {
-          window.location.href = url;
-        }
-      }
-    }, 800);
-
+    setWaLink(url);
     setLoading(false);
     setSubmitted(true);
   };
+
 
 
 
