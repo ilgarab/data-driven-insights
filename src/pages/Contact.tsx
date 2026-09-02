@@ -4,11 +4,12 @@ import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import SectionHeader from "@/components/SectionHeader";
+import { supabase } from "@/integrations/supabase/client";
 
 export default function Contact() {
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-  const [waLink, setWaLink] = useState("");
+  const [error, setError] = useState("");
 
   const { t } = useTranslation();
 
