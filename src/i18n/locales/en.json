@@ -124,7 +124,8 @@
     "sending": "Sending...",
     "send": "Send",
     "successTitle": "Your request has been sent!",
-    "successText": "We will contact you as soon as possible."
+    "successText": "We will contact you as soon as possible.",
+    "errorText": "Something went wrong. Please try again later."
   },
   "cta": {
     "title": "Unlock the real power of analytics in your business",
