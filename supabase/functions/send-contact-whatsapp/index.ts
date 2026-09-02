@@ -40,18 +40,20 @@ Deno.serve(async (req) => {
     );
   }
 
-  let parsed;
+  let body: unknown;
   try {
-    parsed = BodySchema.safeParse(await req.json());
+    body = await req.json();
   } catch {
-    parsed = { success: false, error: 'invalid json' } as const;
+    return new Response(JSON.stringify({ error: 'Yanlış sorğu formatı.' }), {
+      status: 400,
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+    });
   }
+
+  const parsed = BodySchema.safeParse(body);
   if (!parsed.success) {
     return new Response(
-      JSON.stringify({
-        error: 'Məlumatlar düzgün doldurulmayıb.',
-        details: 'success' in parsed ? undefined : undefined,
-      }),
+      JSON.stringify({ error: 'Məlumatlar düzgün doldurulmayıb.', details: parsed.error.flatten().fieldErrors }),
       { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } },
     );
   }
