@@ -4,7 +4,6 @@ import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import SectionHeader from "@/components/SectionHeader";
-import { supabase } from "@/integrations/supabase/client";
 
 export default function Contact() {
   const [loading, setLoading] = useState(false);
@@ -27,26 +26,46 @@ export default function Contact() {
     e.preventDefault();
     setLoading(true);
     setError("");
+
     const fd = new FormData(e.currentTarget);
     const get = (k: string) => ((fd.get(k) as string) ?? "").trim();
 
-    const { error: fnError } = await supabase.functions.invoke("send-contact-whatsapp", {
-      body: {
-        name: get("name"),
-        company: get("company"),
-        email: get("email"),
-        phone: get("phone"),
-        service: get("service"),
-        message: get("message"),
-      },
-    });
+    const name = get("name");
+    const company = get("company");
+    const email = get("email");
+    const phone = get("phone");
+    const service = get("service");
+    const message = get("message");
 
-    setLoading(false);
-    if (fnError) {
+    if (!name || !email || !message) {
       setError(t("contact.errorText"));
+      setLoading(false);
       return;
     }
+
+    const lines = [
+      `*${t("contact.name")}:* ${name}`,
+      company && `*${t("contact.company")}:* ${company}`,
+      `*${t("contact.email")}:* ${email}`,
+      phone && `*${t("contact.phone")}:* ${phone}`,
+      service && `*${t("contact.serviceQuestion")}:* ${service}`,
+      "",
+      `*${t("contact.message")}:*`,
+      message,
+    ].filter(Boolean);
+
+    const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(lines.join("\n"))}`;
+
+    const a = document.createElement("a");
+    a.href = waUrl;
+    a.target = "_blank";
+    a.rel = "noopener noreferrer";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+
     setSubmitted(true);
+    setLoading(false);
   };
 
 
