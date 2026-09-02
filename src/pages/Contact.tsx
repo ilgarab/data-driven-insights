@@ -23,36 +23,32 @@ export default function Contact() {
 
   const WHATSAPP_NUMBER = "994516524945";
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
+    setError("");
     const fd = new FormData(e.currentTarget);
-    const get = (k: string) => (fd.get(k) as string)?.trim() || "-";
-    const text = [
-      "Yeni müraciət - metric.az",
-      `Ad: ${get("name")}`,
-      `Şirkət: ${get("company")}`,
-      `E-poçt: ${get("email")}`,
-      `Telefon: ${get("phone")}`,
-      `Xidmət: ${get("service")}`,
-      `Mesaj: ${get("message")}`,
-    ].join("\n");
+    const get = (k: string) => ((fd.get(k) as string) ?? "").trim();
 
-    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+    const { error: fnError } = await supabase.functions.invoke("send-contact-whatsapp", {
+      body: {
+        name: get("name"),
+        company: get("company"),
+        email: get("email"),
+        phone: get("phone"),
+        service: get("service"),
+        message: get("message"),
+      },
+    });
 
-    // Popup blokerlərinə qarşı: real link klikini simulyasiya edirik
-    const a = document.createElement("a");
-    a.href = url;
-    a.target = "_blank";
-    a.rel = "noopener noreferrer";
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-
-    setWaLink(url);
     setLoading(false);
+    if (fnError) {
+      setError(t("contact.errorText"));
+      return;
+    }
     setSubmitted(true);
   };
+
 
 
 
@@ -119,16 +115,6 @@ export default function Contact() {
                     </div>
                     <h3 className="text-xl font-bold">{t("contact.successTitle")}</h3>
                     <p className="mt-2 text-muted-foreground">{t("contact.successText")}</p>
-                    {waLink && (
-                      <a
-                        href={waLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="mt-5 inline-flex items-center justify-center rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
-                      >
-                        WhatsApp-da aç
-                      </a>
-                    )}
                   </div>
                 </div>
               ) : (
