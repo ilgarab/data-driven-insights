@@ -124,7 +124,8 @@
     "sending": "Göndərilir...",
     "send": "Göndər",
     "successTitle": "Müraciətiniz göndərildi!",
-    "successText": "Ən qısa zamanda sizinlə əlaqə saxlayacağıq."
+    "successText": "Ən qısa zamanda sizinlə əlaqə saxlayacağıq.",
+    "errorText": "Xəta baş verdi. Zəhmət olmasa bir az sonra yenidən cəhd edin."
   },
   "cta": {
     "title": "Biznesinizdə analitikanın real gücünü ortaya çıxaraq",
