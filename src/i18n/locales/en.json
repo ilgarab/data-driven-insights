@@ -123,8 +123,8 @@
     "message": "Message",
     "sending": "Sending...",
     "send": "Send",
-    "successTitle": "Your request has been sent!",
-    "successText": "We will contact you as soon as possible.",
+    "successTitle": "WhatsApp opened!",
+    "successText": "Your message is ready in WhatsApp. Please press the 'Send' button in WhatsApp to deliver it.",
     "errorText": "Something went wrong. Please try again later."
   },
   "cta": {

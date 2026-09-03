@@ -123,8 +123,8 @@
     "message": "Mesaj",
     "sending": "Göndərilir...",
     "send": "Göndər",
-    "successTitle": "Müraciətiniz göndərildi!",
-    "successText": "Ən qısa zamanda sizinlə əlaqə saxlayacağıq.",
+    "successTitle": "WhatsApp açıldı!",
+    "successText": "Mesaj hazır şəkildə WhatsApp-da açıldı. Göndərmək üçün WhatsApp-dakı 'Göndər' düyməsinə basın.",
     "errorText": "Xəta baş verdi. Zəhmət olmasa bir az sonra yenidən cəhd edin."
   },
   "cta": {
