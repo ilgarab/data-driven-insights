@@ -26,6 +26,8 @@ export default function Footer() {
             <ul className="space-y-2.5 text-sm">
               {[
                 ["/services", t("nav.services")],
+                ["/data-analitikasi", "Data analitikası"],
+                ["/hesabat-sistemi", "Hesabat sisteminin qurulması"],
                 ["/blog", t("nav.blog")],
                 ["/about", t("nav.about")],
               ].map(([href, label]) => (

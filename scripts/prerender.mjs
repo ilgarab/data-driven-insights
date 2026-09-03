@@ -26,6 +26,16 @@ const meta = {
     description:
       "Metric BI dashboard, Metric Alert smart bildirişlər, Metric AI proqnozlaşdırma və Metric Fraud aşkarlama həlləri ilə biznesinizi gücləndirin.",
   },
+  "/data-analitikasi": {
+    title: "Data analitikası və biznes analitikası xidmətləri | Metric Analytics",
+    description:
+      "Bakıda analitika şirkəti: data analitikası, biznes analitikası, BI dashboard, hesabatların yaradılması, AI proqnoz və fraud aşkarlama xidmətləri.",
+  },
+  "/hesabat-sistemi": {
+    title: "Hesabat sisteminin qurulması və reporting avtomatlaşdırılması | Metric",
+    description:
+      "Hesabatların yaradılması və reporting sisteminin qurulması: data mənbələrinin birləşdirilməsi, BI dashboard, avtomatik hesabat və bildirişlər.",
+  },
   "/about": {
     title: "Haqqımızda - Metric Analytics komandası və missiyamız",
     description:
@@ -115,6 +125,39 @@ function write(route, html) {
   return path.relative(dist, target);
 }
 
+const service = (name, description, route) => ({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name,
+  description,
+  serviceType: name,
+  areaServed: { "@type": "Country", name: "Azerbaijan" },
+  provider: {
+    "@type": "Organization",
+    name: "Metric Analytics",
+    url: `${SITE}/`,
+  },
+  url: `${SITE}${route}`,
+});
+
+const serviceSchema = {
+  "/data-analitikasi": service(
+    "Data analitikası və biznes analitikası",
+    "Data analitikası, biznes analitikası, BI dashboard qurulması, KPI izləmə, AI proqnozlaşdırma və fraud aşkarlama xidmətləri.",
+    "/data-analitikasi",
+  ),
+  "/hesabat-sistemi": service(
+    "Hesabat sisteminin qurulması",
+    "Reporting sisteminin qurulması, hesabatların yaradılması və avtomatlaşdırılması, data mənbələrinin inteqrasiyası.",
+    "/hesabat-sistemi",
+  ),
+  "/services": service(
+    "Metric BI, Alert, AI və Fraud həlləri",
+    "Biznes analitikası platforması: BI dashboard, smart bildirişlər, AI proqnoz və fraud aşkarlama.",
+    "/services",
+  ),
+};
+
 const results = [];
 
 for (const route of staticRoutes) {
@@ -124,6 +167,7 @@ for (const route of staticRoutes) {
     route === "/"
       ? []
       : [breadcrumb(route, routeMeta.title.split(" - ")[0].split(" | ")[0])];
+  if (serviceSchema[route]) extra.push(serviceSchema[route]);
   results.push(write(route, buildHtml({ route, ...routeMeta, appHtml, extraJsonLd: extra })));
 }
 
