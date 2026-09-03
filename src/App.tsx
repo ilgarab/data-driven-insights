@@ -8,6 +8,8 @@ import { ThemeProvider } from "@/hooks/useTheme";
 import Layout from "@/components/Layout";
 import Index from "./pages/Index";
 import Services from "./pages/Services";
+import DataAnalytics from "./pages/DataAnalytics";
+import ReportingSystem from "./pages/ReportingSystem";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import About from "./pages/About";
@@ -33,6 +35,8 @@ export const AppRoutes = () => (
     <Routes>
       <Route path="/" element={<Index />} />
       <Route path="/services" element={<Services />} />
+      <Route path="/data-analitikasi" element={<DataAnalytics />} />
+      <Route path="/hesabat-sistemi" element={<ReportingSystem />} />
       <Route path="/blog" element={<Blog />} />
       <Route path="/blog/:id" element={<BlogPost />} />
       <Route path="/about" element={<About />} />
