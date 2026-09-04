@@ -2,6 +2,10 @@
 http://www.metric.az/*   https://metric.az/:splat   301!
 https://www.metric.az/*  https://metric.az/:splat   301!
 
+# Lovable preview / staging domains -> canonical domain (301)
+https://metric-insights-forge.lovable.app/*  https://metric.az/:splat  301!
+https://id-preview--3524c04d-895f-4ae8-bf90-53bb524639da.lovable.app/*  https://metric.az/:splat  301!
+
 # Legacy blog path -> /blog (301)
 /blogs        /blog   301!
 /blogs/*      /blog   301!

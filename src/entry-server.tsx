@@ -2,6 +2,7 @@ import { renderToString } from "react-dom/server";
 import { StaticRouter } from "react-router-dom/server";
 import { AppProviders, AppRoutes } from "./App";
 import { blogPosts } from "./data/mockData";
+import { SITE, OG_IMAGE, OG_IMAGE_ALT, seoForRoute, staticRoutes, blogRoutes } from "./seo/config";
 import "./i18n";
 
 export function render(url: string) {
@@ -14,7 +15,4 @@ export function render(url: string) {
   );
 }
 
-export { blogPosts };
-
-export const staticRoutes = ["/", "/services", "/data-analitikasi", "/hesabat-sistemi", "/about", "/blog", "/contact"];
-export const blogRoutes = blogPosts.map((post) => `/blog/${post.id}`);
+export { blogPosts, SITE, OG_IMAGE, OG_IMAGE_ALT, seoForRoute, staticRoutes, blogRoutes };

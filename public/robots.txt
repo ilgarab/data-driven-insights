@@ -13,5 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://metric-insights-forge.lovable.app/sitemap.xml
-
+Sitemap: https://metric.az/sitemap.xml

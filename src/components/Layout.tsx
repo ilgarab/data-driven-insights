@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import FloatingDataIcons from "@/components/FloatingDataIcons";
 import ScrollToTop from "@/components/ScrollToTop";
+import Seo from "@/components/Seo";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const { pathname } = useLocation();
@@ -15,6 +16,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
   return (
     <div className="relative flex min-h-screen flex-col">
+      <Seo />
       <FloatingDataIcons />
       <Navbar />
       <main className="relative z-[3] flex-1">{children}</main>
