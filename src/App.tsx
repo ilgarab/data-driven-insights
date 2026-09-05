@@ -34,13 +34,13 @@ export const AppRoutes = () => (
   <Layout>
     <Routes>
       <Route path="/" element={<Index />} />
-      <Route path="/services/" element={<Services />} />
-      <Route path="/data-analitikasi/" element={<DataAnalytics />} />
-      <Route path="/hesabat-sistemi/" element={<ReportingSystem />} />
-      <Route path="/blog/" element={<Blog />} />
+      <Route path="/services" element={<Services />} />
+      <Route path="/data-analitikasi" element={<DataAnalytics />} />
+      <Route path="/hesabat-sistemi" element={<ReportingSystem />} />
+      <Route path="/blog" element={<Blog />} />
       <Route path="/blog/:id" element={<BlogPost />} />
-      <Route path="/about/" element={<About />} />
-      <Route path="/contact/" element={<Contact />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/contact" element={<Contact />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   </Layout>
