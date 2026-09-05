@@ -52,18 +52,25 @@ const staticSeo: Record<string, { title: string; description: string }> = {
 };
 
 export const staticRoutes = Object.keys(staticSeo);
-export const blogRoutes = blogPosts.map((post) => `/blog/${post.id}`);
+export const blogRoutes = blogPosts.map((post) => `/blog/${post.id}/`);
+
+/** Canonical URL form: root stays "/", every other route ends with a trailing slash. */
+export function canonicalPath(route: string): string {
+  const clean = route.split("?")[0].split("#")[0];
+  if (clean === "" || clean === "/") return "/";
+  return clean.endsWith("/") ? clean : `${clean}/`;
+}
 
 export function seoForRoute(route: string): RouteSeo | null {
-  const path = route !== "/" && route.endsWith("/") ? route.slice(0, -1) : route;
-  const base = { ogImage: OG_IMAGE, ogImageAlt: OG_IMAGE_ALT, canonical: `${SITE}${path === "/" ? "/" : path}` };
+  const path = canonicalPath(route);
+  const base = { ogImage: OG_IMAGE, ogImageAlt: OG_IMAGE_ALT, canonical: `${SITE}${path}` };
 
   if (staticSeo[path]) {
     return { ...staticSeo[path], ...base, ogType: "website" };
   }
 
   if (path.startsWith("/blog/")) {
-    const id = path.split("/").pop();
+    const id = path.replace(/^\/blog\//, "").replace(/\/$/, "");
     const post = blogPosts.find((p) => p.id === id);
     if (!post) return null;
     return {
@@ -76,3 +83,4 @@ export function seoForRoute(route: string): RouteSeo | null {
 
   return null;
 }
+
