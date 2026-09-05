@@ -16,10 +16,10 @@ export default function Navbar() {
   const location = useLocation();
 
   const links = [
-    { href: "/services", label: t("nav.services") },
-    { href: "/blog", label: t("nav.blog") },
-    { href: "/about", label: t("nav.about") },
-    { href: "/contact", label: t("nav.contact") },
+    { href: "/services/", label: t("nav.services") },
+    { href: "/blog/", label: t("nav.blog") },
+    { href: "/about/", label: t("nav.about") },
+    { href: "/contact/", label: t("nav.contact") },
   ];
 
   useEffect(() => {
@@ -67,7 +67,7 @@ export default function Navbar() {
           >
             {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
           </button>
-          <Link to="/contact">
+          <Link to="/contact/">
             <Button size="sm" className="active:scale-[0.97]">{t("nav.cta")}</Button>
           </Link>
         </div>
@@ -109,7 +109,7 @@ export default function Navbar() {
                   {l.label}
                 </Link>
               ))}
-              <Link to="/contact" className="mt-2">
+              <Link to="/contact/" className="mt-2">
                 <Button className="w-full active:scale-[0.97]">{t("nav.cta")}</Button>
               </Link>
             </div>

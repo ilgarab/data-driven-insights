@@ -19,32 +19,32 @@ const staticSeo: Record<string, { title: string; description: string }> = {
     description:
       "Metric Analytics Azərbaycanda bizneslər üçün Power BI dashboard, analitik hesabatlar, smart bildirişlər, AI və fraud aşkarlama həlləri təqdim edir.",
   },
-  "/services": {
+  "/services/": {
     title: "Xidmətlərimiz - Metric BI, Alert, AI və Fraud | Metric Analytics",
     description:
       "Metric BI dashboard, Metric Alert smart bildirişlər, Metric AI proqnozlaşdırma və Metric Fraud aşkarlama həlləri ilə biznesinizi gücləndirin.",
   },
-  "/data-analitikasi": {
+  "/data-analitikasi/": {
     title: "Data analitikası və biznes analitikası xidmətləri | Metric Analytics",
     description:
       "Bakıda analitika şirkəti: data analitikası, biznes analitikası, BI dashboard, hesabatların yaradılması, AI proqnoz və fraud aşkarlama xidmətləri.",
   },
-  "/hesabat-sistemi": {
+  "/hesabat-sistemi/": {
     title: "Hesabat sisteminin qurulması və reporting avtomatlaşdırılması | Metric",
     description:
       "Hesabatların yaradılması və reporting sisteminin qurulması: data mənbələrinin birləşdirilməsi, BI dashboard, avtomatik hesabat və bildirişlər.",
   },
-  "/about": {
+  "/about/": {
     title: "Haqqımızda - Metric Analytics komandası və missiyamız",
     description:
       "Metric Analytics - Bakıda yerləşən data analitika şirkəti. Missiyamız, vizyonumuz və komandamız ilə tanış olun.",
   },
-  "/blog": {
+  "/blog/": {
     title: "Bloq - Data analitika və BI üzrə məqalələr | Metric Analytics",
     description:
       "Biznes analitikası, BI dashboard, data idarəetməsi və AI mövzularında Metric Analytics ekspertlərinin məqalələri.",
   },
-  "/contact": {
+  "/contact/": {
     title: "Əlaqə - Metric Analytics ilə əlaqə saxlayın",
     description:
       "Metric Analytics ilə əlaqə: Əcəmi Naxçıvani, Bakı. Demo, konsultasiya və əməkdaşlıq üçün bizə yazın.",

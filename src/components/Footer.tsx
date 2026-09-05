@@ -25,11 +25,11 @@ export default function Footer() {
             <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-muted-foreground">{t("footer.pages")}</h4>
             <ul className="space-y-2.5 text-sm">
               {[
-                ["/services", t("nav.services")],
-                ["/data-analitikasi", "Data analitikası"],
-                ["/hesabat-sistemi", "Hesabat sisteminin qurulması"],
-                ["/blog", t("nav.blog")],
-                ["/about", t("nav.about")],
+                ["/services/", t("nav.services")],
+                ["/data-analitikasi/", "Data analitikası"],
+                ["/hesabat-sistemi/", "Hesabat sisteminin qurulması"],
+                ["/blog/", t("nav.blog")],
+                ["/about/", t("nav.about")],
               ].map(([href, label]) => (
                 <li key={href}>
                   <Link to={href} className="text-muted-foreground transition-colors hover:text-foreground">{label}</Link>

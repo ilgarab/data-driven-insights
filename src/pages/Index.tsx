@@ -80,12 +80,12 @@ export default function Index() {
               transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
               className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center"
             >
-              <Link to="/services">
+              <Link to="/services/">
                 <Button size="lg" className="gap-2 active:scale-[0.97]">
                   {t("hero.servicesBtn")} <ArrowRight size={16} />
                 </Button>
               </Link>
-              <Link to="/contact">
+              <Link to="/contact/">
                 <Button variant="outline" size="lg" className="active:scale-[0.97]">
                   {t("hero.contactBtn")}
                 </Button>
@@ -120,7 +120,7 @@ export default function Index() {
             ))}
           </div>
           <div className="mt-10 text-center">
-            <Link to="/services" className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:gap-3 transition-all duration-200">
+            <Link to="/services/" className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:gap-3 transition-all duration-200">
               {t("services.allServices")} <ChevronRight size={14} />
             </Link>
           </div>
@@ -174,7 +174,7 @@ export default function Index() {
             ))}
           </div>
           <div className="mt-10 text-center">
-            <Link to="/blog" className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:gap-3 transition-all duration-200">
+            <Link to="/blog/" className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:gap-3 transition-all duration-200">
               {t("blog.allPosts")} <ChevronRight size={14} />
             </Link>
           </div>

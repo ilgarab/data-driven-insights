@@ -15,7 +15,7 @@ export default function BlogPost() {
       <div className="flex min-h-screen items-center justify-center pt-16">
         <div className="text-center">
           <h1 className="text-2xl font-bold">{t("blog.notFound")}</h1>
-          <Link to="/blog" className="mt-4 inline-block text-primary hover:underline">{t("blog.backToBlog")}</Link>
+          <Link to="/blog/" className="mt-4 inline-block text-primary hover:underline">{t("blog.backToBlog")}</Link>
         </div>
       </div>
     );
@@ -34,7 +34,7 @@ export default function BlogPost() {
       <section className="hero-gradient section-padding">
         <div className="container">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="mx-auto max-w-3xl">
-            <Link to="/blog" className="mb-6 inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors">
+            <Link to="/blog/" className="mb-6 inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors">
               <ArrowLeft size={14} /> {t("blog.badge")}
             </Link>
             <span className="mb-3 inline-block rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">{category}</span>
