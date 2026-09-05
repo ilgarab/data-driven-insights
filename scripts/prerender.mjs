@@ -117,7 +117,7 @@ for (const route of staticRoutes) {
 }
 
 for (const route of blogRoutes) {
-  const id = route.split("/").pop();
+  const id = route.replace(/^\/blog\//, "").replace(/\/$/, "");
   const post = blogPosts.find((p) => p.id === id);
   const seo = seoForRoute(route);
   const appHtml = render(route);
