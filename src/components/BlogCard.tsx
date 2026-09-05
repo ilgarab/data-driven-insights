@@ -29,7 +29,7 @@ export default function BlogCard({ id, title, excerpt, category, date, readTime,
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.6, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
     >
-      <Link to={`/blog/${id}`} className="group block h-full">
+      <Link to={`/blog/${id}/`} className="group block h-full">
         <div className="glow-card flex h-full flex-col overflow-hidden">
           <div className="relative h-44 overflow-hidden bg-gradient-to-br from-accent/20 to-primary/10">
             {image ? (

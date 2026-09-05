@@ -6,9 +6,19 @@ https://www.metric.az/*  https://metric.az/:splat   301!
 https://metric-insights-forge.lovable.app/*  https://metric.az/:splat  301!
 https://id-preview--3524c04d-895f-4ae8-bf90-53bb524639da.lovable.app/*  https://metric.az/:splat  301!
 
-# Legacy blog path -> /blog (301)
-/blogs        /blog   301!
-/blogs/*      /blog   301!
+# Legacy blog path -> /blog/ (301)
+/blogs        /blog/   301!
+/blogs/*      /blog/   301!
+
+# Trailing-slash canonicalisation: slash-less -> slash (single 301, no loop)
+/services            /services/            301!
+/data-analitikasi    /data-analitikasi/    301!
+/hesabat-sistemi     /hesabat-sistemi/     301!
+/about               /about/               301!
+/contact             /contact/             301!
+/blog                /blog/                301!
+/blog/:id            /blog/:id/            301!
 
 # Prerendered routes are served as static files; anything unknown is a real 404
 /*            /404.html   404
+

@@ -30,7 +30,7 @@ const breadcrumb = (route, name) => ({
 const template = fs.readFileSync(path.join(dist, "index.html"), "utf8");
 
 function buildHtml({ route, title, description, appHtml, noindex = false, extraJsonLd = [], ogType = "website" }) {
-  const canonical = `${SITE}${route === "/" ? "/" : route}`;
+  const canonical = `${SITE}${route === "/" ? "/" : route.endsWith("/") ? route : `${route}/`}`;
   let html = template;
 
   const replaceMeta = (attr, key, content) => {
@@ -85,26 +85,25 @@ const service = (name, description, route) => ({
 });
 
 const serviceSchema = {
-  "/data-analitikasi": service(
+  "/data-analitikasi/": service(
     "Data analitikası və biznes analitikası",
     "Data analitikası, biznes analitikası, Power BI dashboard qurulması, KPI izləmə, AI proqnozlaşdırma və fraud aşkarlama xidmətləri.",
-    "/data-analitikasi",
+    "/data-analitikasi/",
   ),
-  "/hesabat-sistemi": service(
+  "/hesabat-sistemi/": service(
     "Hesabat sisteminin qurulması",
     "Reporting sisteminin qurulması, hesabatların yaradılması və avtomatlaşdırılması, data mənbələrinin inteqrasiyası.",
-    "/hesabat-sistemi",
+    "/hesabat-sistemi/",
   ),
-  "/services": service(
+  "/services/": service(
     "Metric BI, Alert, AI və Fraud həlləri",
     "Biznes analitikası platforması: Power BI dashboard, smart bildirişlər, AI proqnoz və fraud aşkarlama.",
-    "/services",
+    "/services/",
   ),
 };
 
 const results = [];
 const sitemapEntries = [];
-const buildDate = new Date().toISOString().slice(0, 10);
 
 for (const route of staticRoutes) {
   const seo = seoForRoute(route);
@@ -114,11 +113,11 @@ for (const route of staticRoutes) {
   results.push(
     write(route, buildHtml({ route, title: seo.title, description: seo.description, appHtml, extraJsonLd: extra })),
   );
-  sitemapEntries.push({ route, lastmod: buildDate, changefreq: route === "/" ? "weekly" : "monthly", priority: route === "/" ? "1.0" : "0.8" });
+  sitemapEntries.push({ route, changefreq: route === "/" ? "weekly" : "monthly", priority: route === "/" ? "1.0" : "0.8" });
 }
 
 for (const route of blogRoutes) {
-  const id = route.split("/").pop();
+  const id = route.replace(/^\/blog\//, "").replace(/\/$/, "");
   const post = blogPosts.find((p) => p.id === id);
   const seo = seoForRoute(route);
   const appHtml = render(route);
@@ -165,7 +164,7 @@ results.push("404.html");
 const urls = sitemapEntries
   .map(
     (e) =>
-      `  <url>\n    <loc>${SITE}${e.route === "/" ? "/" : e.route}</loc>\n    <lastmod>${e.lastmod}</lastmod>\n    <changefreq>${e.changefreq}</changefreq>\n    <priority>${e.priority}</priority>\n  </url>`,
+      `  <url>\n    <loc>${SITE}${e.route === "/" ? "/" : e.route}</loc>${e.lastmod ? `\n    <lastmod>${e.lastmod}</lastmod>` : ""}\n    <changefreq>${e.changefreq}</changefreq>\n    <priority>${e.priority}</priority>\n  </url>`,
   )
   .join("\n");
 const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`;

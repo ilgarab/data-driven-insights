@@ -59,10 +59,10 @@ export default function ReportingSystem() {
           />
           <div className="flex flex-wrap justify-center gap-3">
             <Button asChild size="lg">
-              <Link to="/contact">Pulsuz konsultasiya alın</Link>
+              <Link to="/contact/">Pulsuz konsultasiya alın</Link>
             </Button>
             <Button asChild size="lg" variant="outline">
-              <Link to="/services">Xidmətlərə baxın</Link>
+              <Link to="/services/">Xidmətlərə baxın</Link>
             </Button>
           </div>
         </div>

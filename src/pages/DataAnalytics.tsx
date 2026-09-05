@@ -51,10 +51,10 @@ export default function DataAnalytics() {
           />
           <div className="flex flex-wrap justify-center gap-3">
             <Button asChild size="lg">
-              <Link to="/contact">Demo istəyin</Link>
+              <Link to="/contact/">Demo istəyin</Link>
             </Button>
             <Button asChild size="lg" variant="outline">
-              <Link to="/hesabat-sistemi">Hesabat sistemi</Link>
+              <Link to="/hesabat-sistemi/">Hesabat sistemi</Link>
             </Button>
           </div>
         </div>
@@ -101,10 +101,10 @@ export default function DataAnalytics() {
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <Button asChild variant="outline">
-              <Link to="/services">Xidmətlərimiz</Link>
+              <Link to="/services/">Xidmətlərimiz</Link>
             </Button>
             <Button asChild variant="outline">
-              <Link to="/about">Haqqımızda</Link>
+              <Link to="/about/">Haqqımızda</Link>
             </Button>
           </div>
         </div>

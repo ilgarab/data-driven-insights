@@ -14,7 +14,7 @@ export default function CTABanner({
   title,
   subtitle,
   buttonText,
-  buttonLink = "/contact",
+  buttonLink = "/contact/",
 }: CTABannerProps) {
   const { t } = useTranslation();
 
