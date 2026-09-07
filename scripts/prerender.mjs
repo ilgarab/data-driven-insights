@@ -118,7 +118,7 @@ const sitemapEntries = [];
 
 for (const route of staticRoutes) {
   const seo = seoForRoute(route);
-  const appHtml = render(route);
+  const appHtml = visibleStaticHtml(render(route));
   const extra = route === "/" ? [] : [breadcrumb(route, seo.title.split(" - ")[0].split(" | ")[0])];
   if (serviceSchema[route]) extra.push(serviceSchema[route]);
   results.push(
@@ -131,7 +131,7 @@ for (const route of blogRoutes) {
   const id = route.replace(/^\/blog\//, "").replace(/\/$/, "");
   const post = blogPosts.find((p) => p.id === id);
   const seo = seoForRoute(route);
-  const appHtml = render(route);
+  const appHtml = visibleStaticHtml(render(route));
   const article = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -165,7 +165,7 @@ const notFoundHtml = buildHtml({
   route: "/404",
   title: "Səhifə tapılmadı (404) | Metric Analytics",
   description: "Axtardığınız səhifə mövcud deyil. Ana səhifəyə qayıdın və ya xidmətlərimizlə tanış olun.",
-  appHtml: render("/__not_found__"),
+  appHtml: visibleStaticHtml(render("/__not_found__")),
   noindex: true,
 });
 fs.writeFileSync(path.join(dist, "404.html"), notFoundHtml);
