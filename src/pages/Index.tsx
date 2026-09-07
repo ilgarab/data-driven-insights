@@ -127,59 +127,6 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Useful content */}
-      <section className="section-padding">
-        <div className="container">
-          <div className="mx-auto max-w-3xl">
-            <h2 className="text-2xl font-bold tracking-tight md:text-3xl text-balance">
-              {t("homeContent.title")}
-            </h2>
-            <p className="mt-5 text-muted-foreground" style={{ lineHeight: "1.8" }}>
-              {t("homeContent.intro")}
-            </p>
-            <div className="mt-10 space-y-8">
-              {[
-                { h: "homeContent.salesH", p: "homeContent.salesP" },
-                { h: "homeContent.financeH", p: "homeContent.financeP" },
-                { h: "homeContent.stockH", p: "homeContent.stockP" },
-                { h: "homeContent.biH", p: "homeContent.biP" },
-                { h: "homeContent.alertsH", p: "homeContent.alertsP" },
-              ].map((block) => (
-                <div key={block.h}>
-                  <h3 className="text-lg font-semibold tracking-tight">{t(block.h)}</h3>
-                  <p className="mt-2 text-muted-foreground" style={{ lineHeight: "1.8" }}>
-                    {t(block.p)}
-                  </p>
-                </div>
-              ))}
-            </div>
-            <p className="mt-8 text-muted-foreground" style={{ lineHeight: "1.8" }}>
-              {t("homeContent.outro")}
-            </p>
-            <div className="mt-8 rounded-xl border border-border bg-card p-6">
-              <p className="text-sm font-semibold">{t("homeContent.linksTitle")}</p>
-              <ul className="mt-3 space-y-2">
-                <li>
-                  <Link to="/services/" className="text-sm text-primary underline-offset-4 hover:underline">
-                    {t("homeContent.linkServices")}
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/data-analitikasi/" className="text-sm text-primary underline-offset-4 hover:underline">
-                    {t("homeContent.linkData")}
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/hesabat-sistemi/" className="text-sm text-primary underline-offset-4 hover:underline">
-                    {t("homeContent.linkReports")}
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Partners */}
       <section className="section-padding bg-card/30">
         <div className="container">

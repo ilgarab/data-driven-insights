@@ -65,17 +65,6 @@ function buildHtml({ route, title, description, appHtml, noindex = false, extraJ
   return html;
 }
 
-// Framer Motion renders its "initial" state inline (opacity:0, blur, translateY).
-// Neutralize those inline styles in the static HTML so the page is fully readable
-// with JavaScript disabled; on hydration the animation still plays as a purely
-// visual effect.
-const visibleStaticHtml = (html) =>
-  html
-    .replace(/opacity:0(?=[;\s"])/g, "opacity:1")
-    .replace(/blur\([\d.]+px\)/g, "blur(0px)")
-    .replace(/translateY\(-?[\d.]+px\)/g, "translateY(0px)")
-    .replace(/translateX\(-?[\d.]+px\)/g, "translateX(0px)");
-
 function write(route, html) {
   const target =
     route === "/" ? path.join(dist, "index.html") : path.join(dist, route.replace(/^\//, ""), "index.html");
@@ -118,7 +107,7 @@ const sitemapEntries = [];
 
 for (const route of staticRoutes) {
   const seo = seoForRoute(route);
-  const appHtml = visibleStaticHtml(render(route));
+  const appHtml = render(route);
   const extra = route === "/" ? [] : [breadcrumb(route, seo.title.split(" - ")[0].split(" | ")[0])];
   if (serviceSchema[route]) extra.push(serviceSchema[route]);
   results.push(
@@ -131,7 +120,7 @@ for (const route of blogRoutes) {
   const id = route.replace(/^\/blog\//, "").replace(/\/$/, "");
   const post = blogPosts.find((p) => p.id === id);
   const seo = seoForRoute(route);
-  const appHtml = visibleStaticHtml(render(route));
+  const appHtml = render(route);
   const article = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -165,7 +154,7 @@ const notFoundHtml = buildHtml({
   route: "/404",
   title: "Səhifə tapılmadı (404) | Metric Analytics",
   description: "Axtardığınız səhifə mövcud deyil. Ana səhifəyə qayıdın və ya xidmətlərimizlə tanış olun.",
-  appHtml: visibleStaticHtml(render("/__not_found__")),
+  appHtml: render("/__not_found__"),
   noindex: true,
 });
 fs.writeFileSync(path.join(dist, "404.html"), notFoundHtml);

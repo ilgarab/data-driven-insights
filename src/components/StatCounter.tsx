@@ -9,7 +9,7 @@ interface StatCounterProps {
 }
 
 export default function StatCounter({ value, suffix, label, index = 0 }: StatCounterProps) {
-  const [count, setCount] = useState(value);
+  const [count, setCount] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
   const started = useRef(false);
 
@@ -19,7 +19,6 @@ export default function StatCounter({ value, suffix, label, index = 0 }: StatCou
         if (entry.isIntersecting && !started.current) {
           started.current = true;
           const duration = 1500;
-          setCount(0);
           const start = performance.now();
           const animate = (now: number) => {
             const elapsed = now - start;
