@@ -128,7 +128,7 @@ export default function Index() {
       </section>
 
       {/* Useful content */}
-      <section className="section-padding bg-card/30">
+      <section className="section-padding">
         <div className="container">
           <div className="mx-auto max-w-3xl">
             <h2 className="text-2xl font-bold tracking-tight md:text-3xl text-balance">
