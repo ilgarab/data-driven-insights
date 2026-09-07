@@ -17,7 +17,7 @@
   },
   "homeContent": {
     "title": "Your business numbers in one place: analytics, reports and alerts",
-    "intro": "In most companies, sales data lives in one system, financial indicators in another, and stock balances in spreadsheets. As a result, leaders lack a complete picture for decision-making, report preparation takes days, and problems are often discovered too late. Metric Analytics closes this gap: we bring all your key business data into a single analytics environment and turn it into everyday management tools.",
+    "intro": "In most companies, sales data lives in one system, financial indicators in another, and stock balances in spreadsheets. As a result, leaders lack a complete picture for decision-making, report preparation takes days, and problems are often discovered too late. Metric Analytics closes this gap: we bring all your key business data into a single analytics environment and turn it into everyday management tools. Data quality is ensured along the way: figures from different systems are brought to one standard, duplicates and inconsistencies are cleaned up - because even the best dashboard built on bad data leads to wrong decisions.",
     "salesH": "Sales analytics",
     "salesP": "Revenue, profitability by product and customer segment, sales team activity and plan-versus-actual performance are tracked in one panel. Which product's margin is falling, which region is weakening - you see the answers any day, without waiting for the monthly meeting.",
     "financeH": "Finance and receivables",
@@ -28,7 +28,7 @@
     "biP": "Power BI dashboards present data with charts, filters and drill-down: an executive can go from a summary figure to a specific document in a few clicks. The automated reports we build eliminate hours of manual work every month - data flows directly from the source into reports, minimizing the risk of human error.",
     "alertsH": "Smart alerts",
     "alertsP": "When indicators cross the thresholds you define, the system sends automatic notifications: a sharp drop in sales, an overdue payment or a critical stock level - you know before the problem grows. Analytics turns from passive monitoring into an active management tool.",
-    "outro": "All of these solutions integrate with your existing accounting systems and are delivered through a simple, clear interface for your team. Our goal is to show not the technology, but its results: faster decisions, less manual work and full transparency into the real state of your business.",
+    "outro": "All of these solutions integrate with your existing accounting systems and are delivered through a simple, clear interface for your team. Our goal is to show not the technology, but its results: faster decisions, less manual work and full transparency into the real state of your business. Before every project, we analyze your existing data sources and reporting needs together, so the system we build fits your real workflows.",
     "linksTitle": "Learn more:",
     "linkServices": "Our services - Metric BI, Metric Alert, Metric AI and Metric Fraud solutions",
     "linkData": "Data analytics service - data collection and building analytical models",

@@ -17,7 +17,7 @@
   },
   "homeContent": {
     "title": "Biznesinizin rəqəmləri bir yerdə: analitika, hesabatlar və bildirişlər",
-    "intro": "Əksər şirkətlərdə satış məlumatları bir sistemdə, maliyyə göstəriciləri digərində, stok qalıqları isə Excel fayllarında saxlanılır. Nəticədə rəhbərlər qərar vermək üçün lazım olan ümumi mənzərəni görmür, hesabatların hazırlanması günlər çəkir və problemlər çox vaxt gec aşkarlanır. Metric Analytics məhz bu boşluğu doldurur: biznesinizin bütün əsas məlumatlarını vahid analitika mühitində birləşdirir və onları gündəlik idarəetmə alətlərinə çevirir.",
+    "intro": "Əksər şirkətlərdə satış məlumatları bir sistemdə, maliyyə göstəriciləri digərində, stok qalıqları isə Excel fayllarında saxlanılır. Nəticədə rəhbərlər qərar vermək üçün lazım olan ümumi mənzərəni görmür, hesabatların hazırlanması günlər çəkir və problemlər çox vaxt gec aşkarlanır. Metric Analytics məhz bu boşluğu doldurur: biznesinizin bütün əsas məlumatlarını vahid analitika mühitində birləşdirir və onları gündəlik idarəetmə alətlərinə çevirir. Bu prosesdə məlumatların keyfiyyəti də təmin edilir: fərqli sistemlərdən gələn rəqəmlər eyni standarta salınır, dublikatlar və uyğunsuzluqlar təmizlənir - çünki səhv data üzərində qurulan ən gözəl dashboard belə yanlış qərarlara aparır.",
     "salesH": "Satış analitikası",
     "salesP": "Satış dövriyyəsi, məhsul və müştəri seqmentləri üzrə gəlirlilik, satış menecerlərinin fəaliyyəti və plan-fakt icrası bir paneldə izlənilir. Hansı məhsulun marjası düşür, hansı regionda satışlar zəifləyir - bu sualların cavabını aylıq yığıncağı gözləmədən, istənilən gün görürsünüz.",
     "financeH": "Maliyyə və debitor borcları",
@@ -28,7 +28,7 @@
     "biP": "Power BI dashboardları məlumatları qrafiklərlə, filtrlərlə və detallara enmə imkanı ilə təqdim edir: rəhbər ümumi rəqəmdən konkret sənədə qədər bir neçə kliklə çatır. Hazırladığımız avtomatik hesabatlar əməkdaşların hər ay saatlarla sərf etdiyi əl işini aradan qaldırır - məlumatlar mənbədən birbaşa hesabata axır və insan səhvi riski minimuma enir.",
     "alertsH": "Smart bildirişlər",
     "alertsP": "Göstəricilər təyin etdiyiniz hədlərdən kənara çıxanda sistem avtomatik bildiriş göndərir: satışlarda kəskin düşüş, gecikmiş ödəniş və ya kritik stok səviyyəsi barədə problem böyümədən xəbəriniz olur. Beləliklə, analitika passiv nəzarətdən aktiv idarəetmə alətinə çevrilir.",
-    "outro": "Bütün bu həllər sizin mövcud uçot sistemlərinizlə inteqrasiya olunur və komandanız üçün sadə, başa düşülən interfeysdə təqdim edilir. Məqsədimiz texnologiyanı yox, onun verdiyi nəticəni göstərməkdir: daha sürətli qərarlar, daha az manual iş və biznesin real vəziyyətinə dair tam şəffaflıq.",
+    "outro": "Bütün bu həllər sizin mövcud uçot sistemlərinizlə inteqrasiya olunur və komandanız üçün sadə, başa düşülən interfeysdə təqdim edilir. Məqsədimiz texnologiyanı yox, onun verdiyi nəticəni göstərməkdir: daha sürətli qərarlar, daha az manual iş və biznesin real vəziyyətinə dair tam şəffaflıq. Hər layihəyə başlamazdan əvvəl mövcud məlumat mənbələrinizi və hesabat ehtiyaclarınızı birlikdə təhlil edirik ki, qurulan sistem real iş proseslərinizə otursun.",
     "linksTitle": "Ətraflı tanış olun:",
     "linkServices": "Xidmətlərimiz - Metric BI, Metric Alert, Metric AI və Metric Fraud həlləri",
     "linkData": "Data analitika xidməti - məlumatların toplanması və analitik modellərin qurulması",
